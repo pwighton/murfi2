@@ -340,7 +340,9 @@ RtActivation *RtRoiCombine::getWeightedAve(RtData *dat, RtData *weights,
     result->setPixel(0,0.0);
   }
   else {
-    result->setPixel(0,weightedSum/summedWeights);
+    // 2025.10.03 jeungchan
+    // result->setPixel(0,weightedSum/summedWeights);
+    result->setPixel(0,weightedSum/indices.size());
   }
 
   if (dumpAlgoVars && dat->getDataID().getTimePoint() > 2) {

@@ -1,6 +1,7 @@
 # Dockerfile for murfi2.
 ARG BASE_IMAGE_TAG=latest
-FROM ghcr.io/gablab/murfi-base:${BASE_IMAGE_TAG}
+#FROM ghcr.io/gablab/murfi-base:${BASE_IMAGE_TAG}
+FROM pwighton/murfi-base:20251007
 
 ARG DEBIAN_FRONTEND="noninteractive"
 ARG MAKE_TARGET

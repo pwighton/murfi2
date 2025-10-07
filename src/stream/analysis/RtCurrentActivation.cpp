@@ -243,7 +243,9 @@ int RtCurrentActivation::process(ACE_Message_Block *mb) {
     // compute the dev and current activation (magic happens here)
     double dev = sqrt(resAc.getDoubleElement(*it)
                       / (residual->getDataID().getTimePoint()));
-    currentActivation->setPixel(*it, err / dev);
+    //2025.10.03. jeungchan
+    //currentActivation->setPixel(*it, err / dev);
+    currentActivation->setPixel(*it, y);
 
     if (dumpAlgoVars && dat->getDataID().getTimePoint() > 2) {
       dumpFile
